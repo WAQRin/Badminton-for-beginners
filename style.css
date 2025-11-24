@@ -1,0 +1,299 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #1F2937; /* dark text for readability */
+    line-height: 1.6;
+}
+
+a {
+    color: #7C3AED; /* purple */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Container */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Sections */
+section {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #BFDBFE; /* light blue */
+}
+
+
+/* Headers */
+h1 {
+    color: #1E3A8A; /* blue */
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    color: #7C3AED; /* purple */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+p, li, dd {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+
+
+/* Figures & Media */
+
+figure {
+    margin: 20px auto;
+    text-align: center;
+}
+
+figure img {
+    max-width: 300px;  /* limits width */
+    width: 100%;       /* allows responsiveness */
+    height: auto;      /* keeps aspect ratio */
+    border-radius: 10px;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #1F2937;
+}
+
+video, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Buttons */
+button {
+    background-color: #7C3AED;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1E3A8A;
+}
+
+button:focus, .video-btn:focus {
+    outline: 3px solid #7C3AED;
+    outline-offset: 2px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+ /*Navigation Bar */
+nav {
+    background-color: #1E3A8A;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #7C3AED;
+}
+
+
+
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+    section {
+        padding: 25px 15px;
+    }
+}
+
+/* Mobile devices iPhone 12*/
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    p, li, dd {
+        font-size: 0.95rem;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    figure {
+        margin: 15px auto;
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+    }
+}
+
+/* Very small screens (Iphone SE): adjust video buttons */
+@media (max-width: 500px) {
+    .video-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Extra small devices very old iphone */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+/* Center video container */
+#main-video-section {
+    text-align: center;
+}
+
+/* Center the video element itself */
+#main-video {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Center the entire technique selection section */
+.video-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Make buttons consistent size */
+.video-btn {
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+
+.drill-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 10px; /* keep horizontal padding */
+}
+
+.drill-text.visible {
+    max-height: 500px; /* big enough to show full content */
+    padding: 10px; /* adds vertical padding when visible */
+}
+
+/* FAQ Answers - hidden by default for toggle functionality */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 10px;
+}
+
+.faq-answer.visible {
+    max-height: 500px; /* adjust as needed */
+    padding: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #E0E7FF; /* subtle highlight */
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.faq-question:focus {
+    outline: 3px solid #7C3AED; /* visible focus for accessibility */
+}
